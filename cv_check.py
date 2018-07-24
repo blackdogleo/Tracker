@@ -2,6 +2,8 @@ import cv2,time,numpy
 
 video = cv2.VideoCapture(0)
 
+time.sleep(5)
+
 ret_val,image = video.read()
 
 cv2.imwrite(str(time.localtime().tm_year)+','+str(time.localtime().tm_hour)+','+str(time.localtime().tm_min)+','+str(time.localtime().tm_sec)+'.png',image)
@@ -15,3 +17,5 @@ fopen = open('logs.txt','a')
 fopen.write('\n'+str(track))
 
 fopen.close()
+
+cv2.destroyAllWindows
